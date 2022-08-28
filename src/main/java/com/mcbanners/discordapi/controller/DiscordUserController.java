@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("discord")
+@RequestMapping("user")
 public class DiscordUserController {
     private final DiscordUserService discordUserService;
 
