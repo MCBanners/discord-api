@@ -36,7 +36,7 @@ public class DiscordAPIApplication {
         final String token = args[0];
 
         jda = JDABuilder.createDefault(token)
-                .setEnabledIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_PRESENCES)
+                .enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_PRESENCES)
                 .enableCache(CacheFlag.ACTIVITY, CacheFlag.ONLINE_STATUS)
                 .setMemberCachePolicy(MemberCachePolicy.ALL)
                 .build();
