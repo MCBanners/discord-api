@@ -1,4 +1,4 @@
-package com.mcbanners.discordbot.types;
+package com.mcbanners.discordapi.types;
 
 public enum RequestType {
     INFO,

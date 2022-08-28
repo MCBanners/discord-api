@@ -1,4 +1,4 @@
-package com.mcbanners.discordbot.models.server;
+package com.mcbanners.discordapi.models.server;
 
 public class PlayersInfo {
     private int online;

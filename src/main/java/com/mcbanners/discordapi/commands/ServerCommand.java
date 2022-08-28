@@ -1,9 +1,9 @@
-package com.mcbanners.discordbot.commands;
+package com.mcbanners.discordapi.commands;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mcbanners.discordbot.MCBannersBot;
-import com.mcbanners.discordbot.models.server.ServerStatus;
-import com.mcbanners.discordbot.types.RequestType;
+import com.mcbanners.discordapi.DiscordAPIApplication;
+import com.mcbanners.discordapi.models.server.ServerStatus;
+import com.mcbanners.discordapi.types.RequestType;
 import dev.triumphteam.cmd.core.BaseCommand;
 import dev.triumphteam.cmd.core.annotation.ArgName;
 import dev.triumphteam.cmd.core.annotation.Command;
@@ -36,7 +36,7 @@ public class ServerCommand extends BaseCommand {
 
         sender.deferReply().queue();
 
-        try (Response response = MCBannersBot.httpClient.newCall(request).execute()) {
+        try (Response response = DiscordAPIApplication.httpClient.newCall(request).execute()) {
             if (response.code() == 200) {
                 sender.getHook().editOriginal(url).queue();
             } else {
@@ -61,7 +61,7 @@ public class ServerCommand extends BaseCommand {
 
         sender.deferReply().queue();
 
-        try (Response response = MCBannersBot.httpClient.newCall(request).execute()) {
+        try (Response response = DiscordAPIApplication.httpClient.newCall(request).execute()) {
             if (response.code() == 200) {
                 final ServerStatus server = mapper.readValue(response.body().string(), ServerStatus.class);
                 final EmbedBuilder embed = new EmbedBuilder();

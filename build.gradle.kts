@@ -1,10 +1,17 @@
 plugins {
+    id("org.springframework.boot") version "2.7.3"
+    id("io.spring.dependency-management") version "1.0.13.RELEASE"
     id("java")
-    id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
 group = "com.mcbanners"
-version = "1.0-SNAPSHOT"
+version = "0.0.1-SNAPSHOT"
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
 
 repositories {
     mavenCentral()
@@ -12,19 +19,22 @@ repositories {
 }
 
 dependencies {
+    implementation(platform("org.springframework.cloud:spring-cloud-dependencies:2021.0.3"))
+
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-cache")
+    implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
+    implementation("com.github.ben-manes.caffeine:caffeine:3.1.1")
     implementation("dev.triumphteam:triumph-cmd-jda-slash:2.0.0-SNAPSHOT")
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.13.3")
+    implementation("com.google.guava:guava:31.1-jre")
+
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
 }
 
 tasks {
-    jar {
-        manifest {
-            attributes["Main-Class"] = "com.mcbanners.discordbot.MCBannersBot"
-        }
-    }
-
-    shadowJar {
-        archiveFileName.set("discord-bot.jar")
+    bootJar {
+        archiveFileName.set("discordapi.jar")
     }
 }

@@ -1,2 +1,2 @@
-rootProject.name = "discord-bot"
+rootProject.name = "discord-api"
 
