@@ -23,6 +23,10 @@ public class DiscordUserService {
     public DiscordUser getUser(final String id) {
         final JDA jda = DiscordAPIApplication.jda;
 
+        // This (should?) force the user to be loaded in the cache
+        jda.retrieveUserById(id).queue(success -> System.out.println("User found in cache"),
+                        err -> System.out.println("User not found in cache"));
+
         final Member member = jda.getGuilds()
                 .stream().map(Guild::getMembers)
                 .flatMap(Collection::stream)
