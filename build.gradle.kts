@@ -27,7 +27,7 @@ dependencies {
     implementation("com.github.ben-manes.caffeine:caffeine:3.1.1")
     implementation("dev.triumphteam:triumph-cmd-jda-slash:2.0.0-SNAPSHOT")
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.4")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.13.4.2")
     implementation("com.google.guava:guava:31.1-jre")
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
