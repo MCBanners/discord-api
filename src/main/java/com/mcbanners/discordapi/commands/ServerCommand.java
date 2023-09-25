@@ -4,13 +4,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mcbanners.discordapi.DiscordAPIApplication;
 import com.mcbanners.discordapi.models.server.ServerStatus;
 import com.mcbanners.discordapi.types.RequestType;
-import dev.triumphteam.cmd.core.BaseCommand;
-import dev.triumphteam.cmd.core.annotation.ArgName;
-import dev.triumphteam.cmd.core.annotation.Command;
-import dev.triumphteam.cmd.core.annotation.Description;
-import dev.triumphteam.cmd.core.annotation.Optional;
-import dev.triumphteam.cmd.core.annotation.SubCommand;
-import dev.triumphteam.cmd.slash.sender.SlashSender;
+import dev.triumphteam.cmd.core.annotations.ArgName;
+import dev.triumphteam.cmd.core.annotations.Command;
+import dev.triumphteam.cmd.core.annotations.Description;
+import dev.triumphteam.cmd.core.annotations.Optional;
+import dev.triumphteam.cmd.jda.sender.SlashCommandSender;
 import net.dv8tion.jda.api.EmbedBuilder;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -20,12 +18,12 @@ import org.jetbrains.annotations.Nullable;
 import java.awt.*;
 
 @Command("server")
-public class ServerCommand extends BaseCommand {
+public class ServerCommand {
     private final ObjectMapper mapper = new ObjectMapper();
 
-    @SubCommand("icon")
+    @Command("icon")
     @Description("Get the icon of a server")
-    public void icon(final SlashSender sender,
+    public void icon(final SlashCommandSender sender,
                      @ArgName("host") @Description("The server IP") final String host,
                      @ArgName("port") @Description("The server port") @Optional final String port
     ) {
@@ -47,9 +45,9 @@ public class ServerCommand extends BaseCommand {
         }
     }
 
-    @SubCommand("info")
+    @Command("info")
     @Description("Get information about a server")
-    public void info(final SlashSender sender,
+    public void info(final SlashCommandSender sender,
 
                      @ArgName("host") @Description("The server IP") final String host,
                      @ArgName("port") @Description("The server port") @Optional final String port

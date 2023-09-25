@@ -50,7 +50,7 @@ public class DiscordUserService {
 
         discordUser.setStatus(member.getOnlineStatus().getKey());
         discordUser.setId(member.getIdLong());
-        discordUser.setName(user.getAsTag());
+        discordUser.setName(user.getEffectiveName());
         discordUser.setCreated(user.getTimeCreated().toInstant().toEpochMilli());
 
         future.complete(discordUser);

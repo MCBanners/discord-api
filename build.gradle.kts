@@ -25,7 +25,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-cache")
     implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
     implementation("com.github.ben-manes.caffeine:caffeine:3.1.6")
-    implementation("dev.triumphteam:triumph-cmd-jda-slash:2.0.0-SNAPSHOT")
+    implementation("dev.triumphteam:triumph-cmd-jda-slash:2.0.0-ALPHA-9")
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.15.0")
     implementation("com.google.guava:guava:31.1-jre")

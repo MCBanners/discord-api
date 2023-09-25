@@ -1,23 +1,21 @@
 package com.mcbanners.discordapi.commands;
 
 import com.mcbanners.discordapi.DiscordAPIApplication;
-import dev.triumphteam.cmd.core.BaseCommand;
-import dev.triumphteam.cmd.core.annotation.ArgName;
-import dev.triumphteam.cmd.core.annotation.Command;
-import dev.triumphteam.cmd.core.annotation.Description;
-import dev.triumphteam.cmd.core.annotation.SubCommand;
-import dev.triumphteam.cmd.slash.annotation.Choice;
-import dev.triumphteam.cmd.slash.sender.SlashSender;
+import dev.triumphteam.cmd.core.annotations.ArgName;
+import dev.triumphteam.cmd.core.annotations.Command;
+import dev.triumphteam.cmd.core.annotations.Description;
+import dev.triumphteam.cmd.discord.annotation.Choice;
+import dev.triumphteam.cmd.jda.sender.SlashCommandSender;
 import okhttp3.Request;
 import okhttp3.Response;
 import org.jetbrains.annotations.NotNull;
 
 @Command("banner")
-public class BannerCommand extends BaseCommand {
+public class BannerCommand {
 
-    @SubCommand("create")
+    @Command("create")
     @Description("Create a banner!")
-    public void create(final SlashSender sender,
+    public void create(final SlashCommandSender sender,
 
                        @ArgName("type")
                        @Description("The type of banner") final String type,

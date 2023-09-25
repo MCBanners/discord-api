@@ -2,9 +2,9 @@ package com.mcbanners.discordapi;
 
 import com.mcbanners.discordapi.commands.BannerCommand;
 import com.mcbanners.discordapi.commands.ServerCommand;
-import dev.triumphteam.cmd.slash.SlashCommandManager;
-import dev.triumphteam.cmd.slash.choices.ChoiceKey;
-import dev.triumphteam.cmd.slash.sender.SlashSender;
+import dev.triumphteam.cmd.discord.choices.ChoiceKey;
+import dev.triumphteam.cmd.jda.SlashCommandManager;
+import dev.triumphteam.cmd.jda.sender.SlashSender;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
