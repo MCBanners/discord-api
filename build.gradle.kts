@@ -26,7 +26,7 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
     implementation("com.github.ben-manes.caffeine:caffeine:3.1.8")
     implementation("dev.triumphteam:triumph-cmd-jda-slash:2.0.0-SNAPSHOT")
-    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.15.0")
     implementation("com.google.guava:guava:32.1.3-jre")
 
