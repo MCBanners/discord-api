@@ -1,7 +1,7 @@
 plugins {
-    id("org.springframework.boot") version "3.2.1"
-    id("io.spring.dependency-management") version "1.1.4"
-    id("com.github.ben-manes.versions") version "0.50.0"
+    id("org.springframework.boot") version "3.3.0"
+    id("io.spring.dependency-management") version "1.1.5"
+    id("com.github.ben-manes.versions") version "0.51.0"
     id("java")
 }
 
@@ -20,7 +20,7 @@ repositories {
 }
 
 dependencies {
-    implementation(platform("org.springframework.cloud:spring-cloud-dependencies:2023.0.0"))
+    implementation(platform("org.springframework.cloud:spring-cloud-dependencies:2023.0.2"))
 
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-cache")
@@ -28,8 +28,8 @@ dependencies {
     implementation("com.github.ben-manes.caffeine:caffeine:3.1.8")
     implementation("dev.triumphteam:triumph-cmd-jda-slash:2.0.0-SNAPSHOT")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.16.1")
-    implementation("com.google.guava:guava:33.0.0-jre")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.17.1")
+    implementation("com.google.guava:guava:33.2.1-jre")
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 }
