@@ -31,7 +31,7 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-databind:2.17.1")
     implementation("com.google.guava:guava:33.2.1-jre")
 
-    implementation("net.dv8tion:JDA:5.0.0-beta.24") {
+    implementation("net.dv8tion:JDA:5.0.0") {
         exclude(module = "opus-java")
     }
 
