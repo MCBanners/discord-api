@@ -2,9 +2,6 @@ package com.mcbanners.discordapi;
 
 import com.mcbanners.discordapi.commands.BannerCommand;
 import com.mcbanners.discordapi.commands.ServerCommand;
-import dev.triumphteam.cmd.slash.SlashCommandManager;
-import dev.triumphteam.cmd.slash.choices.ChoiceKey;
-import dev.triumphteam.cmd.slash.sender.SlashSender;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -12,6 +9,9 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
 import okhttp3.OkHttpClient;
+import org.incendo.cloud.discord.jda5.JDA5CommandManager;
+import org.incendo.cloud.discord.jda5.JDAInteraction;
+import org.incendo.cloud.execution.ExecutionCoordinator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
@@ -25,7 +25,7 @@ import java.util.List;
 @EnableDiscoveryClient
 public class DiscordAPIApplication {
     public static JDA jda;
-    public static SlashCommandManager<SlashSender> manager;
+    public static JDA5CommandManager<JDAInteraction> manager;
     public static OkHttpClient httpClient = new OkHttpClient();
 
     public static void main(String[] args) throws LoginException {
@@ -43,7 +43,10 @@ public class DiscordAPIApplication {
 
         jda.getPresence().setActivity(Activity.playing("MCBanners.com"));
 
-        manager = SlashCommandManager.create(jda);
+        manager = new JDA5CommandManager<>(
+                ExecutionCoordinator.simpleCoordinator(),
+                JDAInteraction.InteractionMapper.identity()
+        );
 
 
         manager.registerChoices(ChoiceKey.of("platforms"), () ->
