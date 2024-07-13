@@ -20,7 +20,7 @@ repositories {
 }
 
 dependencies {
-    implementation(platform("org.springframework.cloud:spring-cloud-dependencies:2023.0.2"))
+    implementation(platform("org.springframework.cloud:spring-cloud-dependencies:2023.0.3"))
 
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-cache")
@@ -28,7 +28,7 @@ dependencies {
     implementation("com.github.ben-manes.caffeine:caffeine:3.1.8")
     implementation("dev.triumphteam:triumph-cmd-jda-slash:2.0.0-SNAPSHOT")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.17.1")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.17.2")
     implementation("com.google.guava:guava:33.2.1-jre")
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
